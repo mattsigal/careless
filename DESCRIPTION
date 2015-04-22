@@ -1,0 +1,18 @@
+Package: careless
+Type: Package
+Title: Metrics for Identifying Careless Responding
+Version: 0.0.0.9000
+Date: 2015-04-22
+Authors@R: c(person("Matthew", "Sigal", email = "matthewsigal@gmail.com", role = c("aut", "cre")),
+             person("Adam", "Meade", email = "awmeade@ncsu.edu", role = c("aut")),
+             person("Bart", "Craig", email = "bart_craig@ncsu.edu", role = c("aut")),
+             person("Richard", "Yentes", role = c("ctb")))
+Description: This package implements the various methods for detecting careless responding that were discussed in Craig and Meade (2012).
+License: GPL (>= 3)
+LazyData: TRUE
+Depends: R (>= 3.1.0)
+Imports:
+Suggests:
+URL:
+BugReports:
+VignetteBuilder: knitr
