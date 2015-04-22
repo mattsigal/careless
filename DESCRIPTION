@@ -13,6 +13,6 @@ LazyData: TRUE
 Depends: R (>= 3.1.0)
 Imports:
 Suggests:
-URL:
-BugReports:
+URL: https://github.com/mattsigal/careless
+BugReports: https://github.com/mattsigal/careless/issues
 VignetteBuilder: knitr
