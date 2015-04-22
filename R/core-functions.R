@@ -15,7 +15,7 @@
 LSmax <- function(myRow){
   counter <- 1
   maxCount <- 1
-  #Trim missing values option - Overkill, but it works.
+  #Trim missing values option.
   myRow <- Filter(function(x)!all(is.na(x)), myRow)
   for (i in 1:((length(myRow) - 1))) {
     newval <- as.numeric(myRow[i + 1])
