@@ -1,6 +1,6 @@
 # Careless 
 
-`Careless` is a package containing a variety of functions to aid researchers in identifying possible careless respondents.
+`Careless` is a package containing a variety of functions to aid researchers in identifying possible careless respondents in survey research.
 
 `Careless` is still a work in progress so please [file an issue](https://github.com/mattsigal/careless/issues) if you run into issues or have suggestions for further methods or refinements.
 

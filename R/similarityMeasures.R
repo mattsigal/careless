@@ -1,40 +1,3 @@
-#' Long string max.
-#'
-#' \code{LSmax} returns the sum of repeated values.
-#'
-#' This function...
-#'
-#' @param ... Dataframe
-#' @param na.rm A logical scalar. Should missing values (including NaN) be removed?
-#' @return A vector of type integer.
-#' @examples
-#' \dontrun{
-#' LSmax(sample(1:4, 30, replace = TRUE))
-#' 
-#' }
-#' @family careless responding functions
-#' @seealso \code{\link{functionname}}, \code{\link[packagename]{functioname}}
-
-LSmax <- function(myRow){
-  counter <- 1
-  maxCount <- 1
-  #Trim missing values option.
-  myRow <- Filter(function(x)!all(is.na(x)), myRow)
-  for (i in 1:((length(myRow) - 1))) {
-    newval <- as.numeric(myRow[i + 1])
-    oldval <- as.numeric(myRow[i])
-    if (newval == oldval) {
-      counter <- counter + 1
-    }
-    if (counter > maxCount) {
-      maxCount <- counter
-    } else if (newval != oldval) {
-      counter <- 1
-    }
-  }
-  return(maxCount)
-}
-
 Itempairs <- function(input_data, test_value){  # helper function
   require("Hmisc")
   data_matrix <- as.matrix(input_data, test_value) #cast data to matrix form
@@ -51,7 +14,7 @@ Itempairs <- function(input_data, test_value){  # helper function
   matches[,1] <- x_names
   matches[,2] <- y_names
   return(matches)
- }
+}
 
 Syn_for_one <- function(data, matches){  # helper function for a single row of data
   #Looping variables
@@ -62,13 +25,13 @@ Syn_for_one <- function(data, matches){  # helper function for a single row of d
   cross_products <- vector(mode = "numeric", length = nrow(matches)) #Creates a vector to store the cross product for each item pair. Will be reset in each iteration of the loop
   x_squares <- vector(mode = "numeric", length = nrow(matches))
   y_squares <- vector(mode = "numeric", length = nrow(matches))
-   
+  
   for (k in 1:nrow(matches)) {
-      cross_products[k] <- data[as.character(matches[k, 1])] * data[as.character(matches[k, 2])]
-      x_squares[k] <- data[as.character(matches[k, 1])] * data[as.character(matches[k, 1])]
-      y_squares[k] <- data[as.character(matches[k, 2])] * data[as.character(matches[k, 2])]
-      x_sum = x_sum + data[as.character(matches[k, 1])]
-      y_sum = y_sum + data[as.character(matches[k, 2])]
+    cross_products[k] <- data[as.character(matches[k, 1])] * data[as.character(matches[k, 2])]
+    x_squares[k] <- data[as.character(matches[k, 1])] * data[as.character(matches[k, 1])]
+    y_squares[k] <- data[as.character(matches[k, 2])] * data[as.character(matches[k, 2])]
+    x_sum = x_sum + data[as.character(matches[k, 1])]
+    y_sum = y_sum + data[as.character(matches[k, 2])]
   }
   
   sum_cp = sum(cross_products)
