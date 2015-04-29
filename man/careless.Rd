@@ -9,10 +9,10 @@
 careless(x, append = TRUE, na.rm = FALSE)
 }
 \arguments{
-\item{x}{An `R` dataframe or matrix object.}
+\item{x}{An \code{R} dataframe or matrix object.}
 
-\item{append}{A boolean scalar. If `append = TRUE`, the original dataframe is returned with the
-careless responding metrics bound to it. If `append = FALSE`, only the careless responding
+\item{append}{A boolean scalar. If \code{append = TRUE} the original dataframe is returned with the
+careless responding metrics bound to it. If \code{append = FALSE}, only the careless responding
 metrics are returned.}
 
 \item{na.rm}{A logical scalar. This is passed to \code{longString()}.}
@@ -24,7 +24,7 @@ A dataframe object.
 The careless package provides a variety of metrics for identifying careless responding.
 This these are drawn from the statistics used by Craig and Meade (2012).
 
-\code{careless} is a summary function that calls various functions within the `careless` package.
+\code{careless} is a summary function that calls various functions within the \code{careless} package.
 }
 \details{
 This function is designed to work with a dataframe or matrix object.

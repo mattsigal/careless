@@ -7,17 +7,17 @@
 longString(x, na.rm = FALSE, return.value = FALSE)
 }
 \arguments{
-\item{x}{An `R` dataframe or matrix object.}
+\item{x}{An \code{R} dataframe or matrix object.}
 
-\item{na.rm}{A logical scalar. Should missing values be removed?  If TRUE, long string return
-will disregard missingness (e.g., `c(2, 3, NA, 3)` will return a long string value of 2,
-while FALSE would return 1.}
+\item{na.rm}{A logical scalar. Should missing values be removed?  If \code{TRUE}, long string return
+will disregard missingness (e.g., \code{c(2, 3, NA, 3)} will return a long string value of 2,
+while \code{FALSE} would return 1.}
 
 \item{return.value}{A logical scalar. Should the value of the longest string be returned? If
-vector has no sequential repeats, this will return `NA`.}
+vector has no sequential repeats, this will return \code{NA}.}
 }
 \value{
-A vector of type integer, or type character if `return.value = TRUE` and input is
+A vector of type integer, or type character if \code{return.value = TRUE} and input is
 a set of factors.
 }
 \description{
@@ -26,8 +26,8 @@ a set of factors.
 \details{
 This function is designed to work with a dataframe or matrix object, and has two primary methods
 of return: the number of the longest set of repetitions, or the value which those repititions
-utilised.  For example, if a respondent used option A 10 times in a row, `return.values = FALSE`
-(default) would return 10, while `return.values = TRUE` would return "A".
+utilised.  For example, if a respondent used option A 10 times in a row, \code{return.values = FALSE}
+(default) would return 10, while \code{return.values = TRUE} would return "A".
 }
 \examples{
 \dontrun{
@@ -38,6 +38,6 @@ longString(dat, return.value = TRUE)
 }
 }
 \seealso{
-\code{\link{malDist}}
+\code{\link{careless}}, \code{\link{malDist}}
 }
 
