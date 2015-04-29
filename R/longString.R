@@ -4,17 +4,17 @@
 #'
 #' This function is designed to work with a dataframe or matrix object, and has two primary methods
 #' of return: the number of the longest set of repetitions, or the value which those repititions
-#' utilised.  For example, if a respondent used option A 10 times in a row, `return.values = FALSE`
-#' (default) would return 10, while `return.values = TRUE` would return "A".
+#' utilised.  For example, if a respondent used option A 10 times in a row, \code{return.values = FALSE}
+#' (default) would return 10, while \code{return.values = TRUE} would return "A".
 #'
-#' @param x An `R` dataframe or matrix object.
-#' @param na.rm A logical scalar. Should missing values be removed?  If TRUE, long string return 
-#' will disregard missingness (e.g., `c(2, 3, NA, 3)` will return a long string value of 2, 
-#' while FALSE would return 1.
+#' @param x An \code{R} dataframe or matrix object.
+#' @param na.rm A logical scalar. Should missing values be removed?  If \code{TRUE}, long string return 
+#' will disregard missingness (e.g., \code{c(2, 3, NA, 3)} will return a long string value of 2, 
+#' while \code{FALSE} would return 1.
 #' @param return.value A logical scalar. Should the value of the longest string be returned? If 
-#' vector has no sequential repeats, this will return `NA`.
+#' vector has no sequential repeats, this will return \code{NA}.
 #' 
-#' @return A vector of type integer, or type character if `return.value = TRUE` and input is
+#' @return A vector of type integer, or type character if \code{return.value = TRUE} and input is
 #' a set of factors.
 #' 
 #' @export
@@ -27,7 +27,7 @@
 #' longString(dat, return.value = TRUE)
 #' }
 #' 
-#' @seealso \code{\link{malDist}}
+#' @seealso \code{\link{careless}}, \code{\link{malDist}}
 
 longString <- function(x, na.rm = FALSE, return.value = FALSE){
   if (is.matrix(x)){

@@ -1,12 +1,12 @@
-#' Careless Respondants
+#' Careless Respondents
 #'
-#' \code{careless} is a summary function that calls various functions within the `careless` package.
+#' \code{careless} is a summary function that calls various functions within the \code{careless} package.
 #'
 #' This function is designed to work with a dataframe or matrix object.
 #'
-#' @param x An `R` dataframe or matrix object.
-#' @param append A boolean scalar. If `append = TRUE`, the original dataframe is returned with the
-#' careless responding metrics bound to it. If `append = FALSE`, only the careless responding
+#' @param x An \code{R} dataframe or matrix object.
+#' @param append A boolean scalar. If \code{append = TRUE} the original dataframe is returned with the
+#' careless responding metrics bound to it. If \code{append = FALSE}, only the careless responding
 #' metrics are returned.
 #' @param na.rm A logical scalar. This is passed to \code{longString()}.
 #' 
