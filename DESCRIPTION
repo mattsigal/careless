@@ -7,12 +7,13 @@ Authors@R: c(person("Matthew", "Sigal", email = "matthewsigal@gmail.com", role =
              person("Adam", "Meade", email = "awmeade@ncsu.edu", role = c("aut")),
              person("Bart", "Craig", email = "bart_craig@ncsu.edu", role = c("aut")),
              person("Richard", "Yentes", role = c("ctb")))
-Description: This package implements the various methods for detecting careless responding that were discussed in Craig and Meade (2012).
+Description: This package implements various methods for detecting careless responding that discussed in Craig and Meade (2012).
 License: GPL (>= 3)
 LazyData: TRUE
 Depends: R (>= 3.1.0)
 Imports:
 Suggests:
+    knitr
 URL: https://github.com/mattsigal/careless
 BugReports: https://github.com/mattsigal/careless/issues
 VignetteBuilder: knitr

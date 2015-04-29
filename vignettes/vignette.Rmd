@@ -1,0 +1,8 @@
+---
+title: "careless: Metrics for Identifying Careless Responding"
+author: "Matthew Sigal"
+date: "April 29, 2015"
+output: pdf_document
+---
+
+This vignette will demonstrate the use of the primary functions found in `careless`.
