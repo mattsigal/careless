@@ -27,9 +27,7 @@
 #' longString(dat, return.value = TRUE)
 #' }
 #' 
-#' @family careless responding functions
-#' 
-#' @seealso \code{\link{careless}}
+#' @seealso \code{\link{malDist}}
 
 longString <- function(x, na.rm = FALSE, return.value = FALSE){
   if (is.matrix(x)){

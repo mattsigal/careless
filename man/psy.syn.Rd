@@ -21,8 +21,6 @@ A vector of type integer.
 This function...
 }
 \seealso{
-\code{\link{functionname}}, \code{\link[packagename]{functioname}}
-
-Other careless.responding.functions: \code{\link{longString}}
+\code{\link{longString}}
 }
 

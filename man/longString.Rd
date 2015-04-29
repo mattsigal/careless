@@ -7,7 +7,7 @@
 longString(x, na.rm = FALSE, return.value = FALSE)
 }
 \arguments{
-\item{x}{An `R` dataframe.}
+\item{x}{An `R` dataframe or matrix object.}
 
 \item{na.rm}{A logical scalar. Should missing values be removed?  If TRUE, long string return
 will disregard missingness (e.g., `c(2, 3, NA, 3)` will return a long string value of 2,
@@ -38,8 +38,6 @@ longString(dat, return.value = TRUE)
 }
 }
 \seealso{
-\code{\link{careless}}
-
-Other careless.responding.functions: \code{\link{psy.syn}}
+\code{\link{malDist}}
 }
 
