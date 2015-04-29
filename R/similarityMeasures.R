@@ -64,7 +64,7 @@ Syn_for_one <- function(data, matches){  # helper function for a single row of d
 #' @param test_value A logical scalar. Should missing values (including NaN) be removed?
 #' @return A vector of type integer.
 #' @family careless responding functions
-#' @seealso \code{\link{functionname}}, \code{\link[packagename]{functioname}}
+#' @seealso \code{\link{longString}}
 #' 
 psy.syn <- function(input_data, test_value){  # parent function
   data <- as.matrix(input_data)

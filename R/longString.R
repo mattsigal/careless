@@ -7,7 +7,7 @@
 #' utilised.  For example, if a respondent used option A 10 times in a row, `return.values = FALSE`
 #' (default) would return 10, while `return.values = TRUE` would return "A".
 #'
-#' @param x An `R` dataframe.
+#' @param x An `R` dataframe or matrix object.
 #' @param na.rm A logical scalar. Should missing values be removed?  If TRUE, long string return 
 #' will disregard missingness (e.g., `c(2, 3, NA, 3)` will return a long string value of 2, 
 #' while FALSE would return 1.
