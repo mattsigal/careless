@@ -1,6 +1,7 @@
 #' Careless Respondents
 #'
-#' \code{careless} is a summary function that calls various functions within the \code{careless} package.
+#' \code{careless} is a summary function that calls the various within the \code{careless} package
+#' and appends them onto the original dataframe.
 #'
 #' This function is designed to work with a dataframe or matrix object.
 #'

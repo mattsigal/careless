@@ -24,7 +24,8 @@ A dataframe object.
 The careless package provides a variety of metrics for identifying careless responding.
 This these are drawn from the statistics used by Craig and Meade (2012).
 
-\code{careless} is a summary function that calls various functions within the \code{careless} package.
+\code{careless} is a summary function that calls the various within the \code{careless} package
+and appends them onto the original dataframe.
 }
 \details{
 This function is designed to work with a dataframe or matrix object.
