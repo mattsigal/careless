@@ -43,6 +43,8 @@ longString <- function(x, na.rm = FALSE, return.value = FALSE){
       myRow <- Filter(function(x)!all(is.na(x)), myRow)
     }
     
+    if (sum(is.na(myRow)) == length(myRow)) return(NA)
+    
     for (i in 1L:(length(myRow) - 1L)) {
       newval <- unname(myRow[i + 1L])
       oldval <- unname(myRow[i])
@@ -61,7 +63,6 @@ longString <- function(x, na.rm = FALSE, return.value = FALSE){
     
     if (ret) out <- maxVal else out <- maxCount
     return(out)
-    
   }
   
   return(unname(apply(x, 1, findRowMax, return.value)))

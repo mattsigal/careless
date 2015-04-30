@@ -9,7 +9,7 @@ psyAnt(x, cutoff = -0.6, cor.method = "pearson")
 \arguments{
 \item{x}{An \code{R} dataframe or matrix object.}
 
-\item{cutoff}{An integer scalar. The value at which correlations should be declared "antonyms".
+\item{cutoff}{A numeric scalar. The value at which correlations should be declared "antonyms".
 Default is set to \emph{r} <= -.60.}
 
 \item{cor.method}{Character string indicating which method is passed to \code{cor} to use when

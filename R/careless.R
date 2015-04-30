@@ -9,6 +9,11 @@
 #' careless responding metrics bound to it. If \code{append = FALSE}, only the careless responding
 #' metrics are returned.
 #' @param na.rm A logical scalar. This is passed to \code{longString()}.
+#' @param psySyn A boolean scalar. Should Psychological Synonyms be evaluated?
+#' @param psyAnt A boolean scaler. Should Psychological Antonyms be evaluated?
+#' @param cutoff A numeric scalar. If \code{psySyn} or \code{psyAnt} are \code{TRUE},
+#' \code{cutoff} is the absolute value at which correlations should be declared 
+#' "antonyms" and "synonyms". Default is set to \emph{r} +/- .60.
 #' 
 #' @return A dataframe object.
 #' 
@@ -24,18 +29,26 @@
 #' 
 #' @seealso \code{\link{longString}},\code{\link{malDist}}
 
-careless <- function(x, append = TRUE, na.rm = FALSE){
+careless <- function(x, append = TRUE, na.rm = FALSE, 
+                     antonyms = FALSE, synonyms = FALSE, cutoff = .60){
 
   checkInput(x)
  
   longString <- longString(x, na.rm, return.value = FALSE)
   longStringValue <- longString(x, na.rm, return.value = TRUE)
   MahalanobisD <- malDist(x)
-  psyAntonyms <- psyAnt(x)
-  psySynonyms <- psySyn(x)
   
-  out <- data.frame(longString, longStringValue, MahalanobisD, 
-                    psyAntonyms, psySynonyms)
+  if (antonyms) {
+    psyAntonyms <- psyAnt(x, cutoff = cutoff * -1L)
+  }
+  if (synonyms) {
+    psySynonyms <- psySyn(x, cutoff = cutoff)
+  }
   
+  out <- data.frame(longString, longStringValue, MahalanobisD)
+  
+  if (antonyms) out <- data.frame(out, psyAntonyms)
+  if (synonyms) out <- data.frame(out, psySynonyms)
+
   if (append) return(data.frame(x, out)) else return(out)
 }

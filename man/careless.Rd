@@ -4,7 +4,8 @@
 \alias{careless}
 \title{Careless Summary}
 \usage{
-careless(x, append = TRUE, na.rm = FALSE)
+careless(x, append = TRUE, na.rm = FALSE, antonyms = FALSE,
+  synonyms = FALSE, cutoff = 0.6)
 }
 \arguments{
 \item{x}{An \code{R} dataframe or matrix object.}
@@ -14,6 +15,14 @@ careless responding metrics bound to it. If \code{append = FALSE}, only the care
 metrics are returned.}
 
 \item{na.rm}{A logical scalar. This is passed to \code{longString()}.}
+
+\item{cutoff}{A numeric scalar. If \code{psySyn} or \code{psyAnt} are \code{TRUE},
+\code{cutoff} is the absolute value at which correlations should be declared
+"antonyms" and "synonyms". Default is set to \emph{r} +/- .60.}
+
+\item{psySyn}{A boolean scalar. Should Psychological Synonyms be evaluated?}
+
+\item{psyAnt}{A boolean scaler. Should Psychological Antonyms be evaluated?}
 }
 \value{
 A dataframe object.
