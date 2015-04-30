@@ -1,9 +1,8 @@
-#' Careless Respondents
+#' Careless Summary
 #'
-#' \code{careless} is a summary function that calls the various within the \code{careless} package
-#' and appends them onto the original dataframe.
-#'
-#' This function is designed to work with a dataframe or matrix object.
+#' \code{careless} is a convenience function that calls the various methods within the package
+#' and, by default, appends them onto the original dataframe. This function is designed to work with 
+#' dataframe or matrix objects.
 #'
 #' @param x An \code{R} dataframe or matrix object.
 #' @param append A boolean scalar. If \code{append = TRUE} the original dataframe is returned with the
@@ -26,18 +25,17 @@
 #' @seealso \code{\link{longString}},\code{\link{malDist}}
 
 careless <- function(x, append = TRUE, na.rm = FALSE){
-  if (is.matrix(x)){
-    x <- as.data.frame(x)
-  }
 
-  if (!is.data.frame(x))
-    stop("input must be a data.frame or matrix object")
-  
+  checkInput(x)
+ 
   longString <- longString(x, na.rm, return.value = FALSE)
   longStringValue <- longString(x, na.rm, return.value = TRUE)
   MahalanobisD <- malDist(x)
+  psyAntonyms <- psyAnt(x)
+  psySynonyms <- psySyn(x)
   
-  out <- data.frame(longString, longStringValue, MahalanobisD)
+  out <- data.frame(longString, longStringValue, MahalanobisD, 
+                    psyAntonyms, psySynonyms)
   
   if (append) return(data.frame(x, out)) else return(out)
 }

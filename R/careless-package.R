@@ -7,6 +7,9 @@
 #' `longString()`, which returns either the count or the value of the longest set of 
 #' repititions in a dataframe.
 #'
+#' @name careless-package
+#' @title Metrics for identifying careless responding.
+#' @author Matthew Sigal \email{matthewsigal@@gmail.com}
 #' @docType package
-#' @name careless
+#' @keywords package
 NULL

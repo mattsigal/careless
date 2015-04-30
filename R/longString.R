@@ -30,12 +30,8 @@
 #' @seealso \code{\link{careless}}, \code{\link{malDist}}
 
 longString <- function(x, na.rm = FALSE, return.value = FALSE){
-  if (is.matrix(x)){
-    x <- as.data.frame(x)
-  }
 
-  if (!is.data.frame(x))
-    stop("input must be a data.frame or matrix object")
+  checkInput(x)
   
   findRowMax <- function(myRow, na = na.rm, ret = return.value){
     counter <- 1
@@ -47,19 +43,19 @@ longString <- function(x, na.rm = FALSE, return.value = FALSE){
       myRow <- Filter(function(x)!all(is.na(x)), myRow)
     }
     
-    for (i in 1:(length(myRow) - 1)) {
-      newval <- unname(myRow[i + 1])
+    for (i in 1L:(length(myRow) - 1L)) {
+      newval <- unname(myRow[i + 1L])
       oldval <- unname(myRow[i])
       
       if (identical(newval, oldval)) {
-        counter <- counter + 1
+        counter <- counter + 1L
         maxVal <- oldval
       }
       
       if (counter > maxCount) {
         maxCount <- counter
         } else if (!identical(newval, oldval)) {
-          counter <- 1
+          counter <- 1L
         }
     }
     

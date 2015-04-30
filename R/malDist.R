@@ -29,14 +29,10 @@
 #' @seealso \code{\link{longString}}
 #' 
 malDist <- function(x, nitems = NA){
-  if (is.matrix(x)){
-    x <- as.data.frame(x)
-  }
-
-  if (!is.data.frame(x))
-    stop("input must be a data.frame or matrix object")
   
-  for (i in 1:length(x)){
+  checkInput(x)
+  
+  for (i in 1L:length(x)){
     if (class(x[,i]) == "factor"){
       x[,i] <- as.numeric(x[,i])
     }
@@ -51,15 +47,15 @@ malDist <- function(x, nitems = NA){
   } else {
     # If nitems is given:
     out <- matrix(NA, nrow = nrow(x), ncol = (ncol(x)/nitems))
-    itemGroups <- matrix(data = 1:length(x), nrow = nitems)
-    for (i in 1:ncol(itemGroups)){
+    itemGroups <- matrix(data = 1L:length(x), nrow = nitems)
+    for (i in 1L:ncol(itemGroups)){
       subsetDat <- x[,itemGroups[,i]]
       meanVec <- colMeans(subsetDat, na.rm = TRUE)
       varMat <- var(subsetDat, na.rm = TRUE)
       out[,i] <- unname(mahalanobis(subsetDat, meanVec, varMat))
     }
     out <- cbind(out, rowMeans(out))
-    colnames(out) <- c(paste0("D", 1:(ncol(out)-1)), "AverageD")
+    colnames(out) <- c(paste0("D", 1L:(ncol(out)-1L)), "AverageD")
     return(out)
   }
 }

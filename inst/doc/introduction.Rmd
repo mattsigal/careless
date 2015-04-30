@@ -1,0 +1,20 @@
+---
+title: "Introduction to careless"
+author: "Matthew Sigal"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction to careless}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+When analyzing survey data, it is imperative that we assess the data before incorporating it into statistical models. 
+
+## Data
+
+The following vignette uses the XXX dataset.
+
+## Long String Max
+
+The `longString()` function...

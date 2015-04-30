@@ -3,3 +3,5 @@
 export(careless)
 export(longString)
 export(malDist)
+export(psyAnt)
+export(psySyn)
