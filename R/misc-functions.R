@@ -1,5 +1,6 @@
 # Helper Functions
 
+# checkInput for dataframe
 checkInput <- function(x) {
   # Make sure input is either a matrix or a dataframe
   if (is.matrix(x)){
@@ -11,3 +12,5 @@ checkInput <- function(x) {
   
   return(x)
 }
+
+# Within-Person Standard Deviation

@@ -14,7 +14,7 @@ careless(x, append = TRUE, na.rm = FALSE, antonyms = FALSE,
 careless responding metrics bound to it. If \code{append = FALSE}, only the careless responding
 metrics are returned.}
 
-\item{na.rm}{A logical scalar. This is passed to \code{longString()}.}
+\item{na.rm}{A logical scalar. This is passed to \code{longString()} and \code{withinsd()}.}
 
 \item{cutoff}{A numeric scalar. If \code{psySyn} or \code{psyAnt} are \code{TRUE},
 \code{cutoff} is the absolute value at which correlations should be declared

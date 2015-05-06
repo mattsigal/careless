@@ -11,9 +11,10 @@ Description: This package implements various methods for detecting careless resp
 License: GPL (>= 3)
 LazyData: TRUE
 Depends: R (>= 3.1.0)
-Imports:
-Suggests:
-    knitr
+Imports: 
+Suggests: 
+    knitr,
+    testthat
 URL: https://github.com/mattsigal/careless
 BugReports: https://github.com/mattsigal/careless/issues
 VignetteBuilder: knitr

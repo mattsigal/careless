@@ -8,7 +8,7 @@
 #' @param append A boolean scalar. If \code{append = TRUE} the original dataframe is returned with the
 #' careless responding metrics bound to it. If \code{append = FALSE}, only the careless responding
 #' metrics are returned.
-#' @param na.rm A logical scalar. This is passed to \code{longString()}.
+#' @param na.rm A logical scalar. This is passed to \code{longString()} and \code{withinsd()}.
 #' @param psySyn A boolean scalar. Should Psychological Synonyms be evaluated?
 #' @param psyAnt A boolean scaler. Should Psychological Antonyms be evaluated?
 #' @param cutoff A numeric scalar. If \code{psySyn} or \code{psyAnt} are \code{TRUE},
@@ -37,6 +37,7 @@ careless <- function(x, append = TRUE, na.rm = FALSE,
   longString <- longString(x, na.rm, return.value = FALSE)
   longStringValue <- longString(x, na.rm, return.value = TRUE)
   MahalanobisD <- malDist(x)
+  withinSD <- withinsd(x, na.rm)
   
   if (antonyms) {
     psyAntonyms <- psyAnt(x, cutoff = cutoff * -1L)
