@@ -12,6 +12,7 @@ License: GPL (>= 3)
 LazyData: TRUE
 Depends: R (>= 3.1.0)
 Imports: 
+    psych
 Suggests: 
     knitr,
     testthat

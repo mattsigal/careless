@@ -13,8 +13,34 @@ When analyzing survey data, it is imperative that we assess the data before inco
 
 ## Data
 
-The following vignette uses the XXX dataset.
+The following vignette uses the BFI dataset distributed with the `psych` package.
+
+```{r}
+library(careless)
+dat <- data("bfi")
+```
 
 ## Long String Max
 
 The `longString()` function...
+
+An Example
+
+
+xtabs(~longString(dat[,1:25], return.value = TRUE))
+head(sort(longString(dat[,1:25], return.value = FALSE), decreasing = TRUE), n = 15)
+
+# Reversed Data
+keys <- c(-1, rep(1,7), rep(-1,4), rep(1,9), -1, rep(1,2), -1, rep(1,3))
+revDat <- psych::reverse.code(keys, dat)
+items <- data.frame(revDat[,1:25])
+demos <- data.frame(revDat[,26:28])
+
+countAnt(items, cutoff = -.25)
+head(psyAnt(items, cutoff = -.25))
+
+countSyn(items, cutoff = .5)
+head(psySyn(items, cutoff = .5))
+
+
+head(malDist(items, nitems = 5))
